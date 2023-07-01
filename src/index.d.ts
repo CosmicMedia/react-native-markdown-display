@@ -27,6 +27,14 @@ export type RenderLinkFunction = (
 	onLinkPress?: (url: string) => boolean,
 ) => ReactNode;
 
+export type RenderTimestampFunction = (
+	node: ASTNode,
+	children: ReactNode[],
+	parentNodes: ASTNode[],
+	styles: any,
+	onTimestampPress?: (url: string) => boolean,
+) => ReactNode;
+
 export type RenderImageFunction = (
 	node: ASTNode,
 	children: ReactNode[],
@@ -41,6 +49,7 @@ export interface RenderRules {
 	link?: RenderLinkFunction;
 	blocklink?: RenderLinkFunction;
 	image?: RenderImageFunction;
+	timestamp?: RenderTimestampFunction;
 }
 
 export const renderRules: RenderRules;
@@ -90,6 +99,7 @@ export interface MarkdownProps {
 	mergeStyle?: boolean;
 	debugPrintTree?: boolean;
 	onLinkPress?: (url: string) => boolean;
+	onTimestampPress?: (url: string) => boolean;
 }
 
 type MarkdownStatic = ComponentType<MarkdownProps>;
