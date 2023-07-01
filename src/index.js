@@ -19,7 +19,6 @@ import {styles} from './lib/styles';
 import {stringToTokens} from './lib/util/stringToTokens';
 import FitImage from 'react-native-fit-image';
 import textStyleProps from './lib/data/textStyleProps';
-import SimpleMarkdown from '@khanacademy/simple-markdown';
 
 export {
 	getUniqueID,
