@@ -143,6 +143,9 @@ const Markdown = React.memo(
 		rules = null,
 		style = null,
 		mergeStyle = true,
+		markdownit = MarkdownIt({
+			typographer: true,
+		}),
 		onLinkPress,
 		onTimestampPress,
 		maxTopLevelChildren = null,
