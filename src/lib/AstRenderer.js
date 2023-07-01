@@ -15,6 +15,7 @@ export default class AstRenderer {
 		renderRules,
 		style,
 		onLinkPress,
+		onTimestampPress,
 		maxTopLevelChildren,
 		topLevelMaxExceededItem,
 		allowedImageHandlers,
@@ -24,6 +25,7 @@ export default class AstRenderer {
 		this._renderRules = renderRules;
 		this._style = style;
 		this._onLinkPress = onLinkPress;
+		this._onTimestampPress = onTimestampPress;
 		this._maxTopLevelChildren = maxTopLevelChildren;
 		this._topLevelMaxExceededItem = topLevelMaxExceededItem;
 		this._allowedImageHandlers = allowedImageHandlers;
@@ -85,6 +87,16 @@ export default class AstRenderer {
 				parentNodes,
 				this._style,
 				this._onLinkPress,
+			);
+		}
+
+		if (node.type === 'timestamp') {
+			return renderFunction(
+				node,
+				children,
+				parentNodes,
+				this._style,
+				this._onTimestampPress,
 			);
 		}
 

@@ -299,6 +299,15 @@ const renderRules = {
     return <FitImage {...imageProps} />;
   },
 
+  timestamp: (node, children, parent, styles, onTimestampPress) => (
+	<Text
+      key={node.key}
+      style={styles.link}
+      onPress={onTimestampPress}>
+      {children}
+    </Text>
+  ),
+
   // Text Output
   text: (node, children, parent, styles, inheritedStyles = {}) => (
     <Text key={node.key} style={[inheritedStyles, styles.text]}>

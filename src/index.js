@@ -86,6 +86,7 @@ const getRenderer = (
 	style,
 	mergeStyle,
 	onLinkPress,
+	onTimestampPress,
 	maxTopLevelChildren,
 	topLevelMaxExceededItem,
 	allowedImageHandlers,
@@ -126,6 +127,7 @@ const getRenderer = (
 			},
 			useStyles,
 			onLinkPress,
+			onTimestampPress,
 			maxTopLevelChildren,
 			topLevelMaxExceededItem,
 			allowedImageHandlers,
@@ -144,6 +146,7 @@ const Markdown = React.memo(
 		mergeStyle = true,
 		simplemarkdown = SimpleMarkdown.defaultBlockParse,
 		onLinkPress,
+		onTimestampPress,
 		maxTopLevelChildren = null,
 		topLevelMaxExceededItem = <Text key="dotdotdot">...</Text>,
 		allowedImageHandlers = [
@@ -164,6 +167,7 @@ const Markdown = React.memo(
 					style,
 					mergeStyle,
 					onLinkPress,
+					onTimestampPress,
 					maxTopLevelChildren,
 					topLevelMaxExceededItem,
 					allowedImageHandlers,
@@ -173,6 +177,7 @@ const Markdown = React.memo(
 			[
 				maxTopLevelChildren,
 				onLinkPress,
+				onTimestampPress,
 				renderer,
 				rules,
 				style,
@@ -201,6 +206,7 @@ Markdown.propTypes = {
 		PropTypes.instanceOf(AstRenderer),
 	]),
 	onLinkPress: PropTypes.func,
+	onTimestampPress: PropTypes.func,
 	maxTopLevelChildren: PropTypes.number,
 	topLevelMaxExceededItem: PropTypes.any,
 	rules: (props, propName, componentName) => {
