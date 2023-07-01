@@ -13,7 +13,7 @@ import openUrl from './lib/util/openUrl';
 import tokensToAST from './lib/util/tokensToAST';
 import renderRules from './lib/renderRules';
 import AstRenderer from './lib/AstRenderer';
-import MarkdownIt from 'markdown-it';
+import MarkdownIt from '@cosmicmedia/markdown-it';
 import removeTextStyleProps from './lib/util/removeTextStyleProps';
 import {styles} from './lib/styles';
 import {stringToTokens} from './lib/util/stringToTokens';
