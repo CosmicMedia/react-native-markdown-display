@@ -143,7 +143,6 @@ const Markdown = React.memo(
 		rules = null,
 		style = null,
 		mergeStyle = true,
-		simplemarkdown = SimpleMarkdown.defaultBlockParse,
 		onLinkPress,
 		onTimestampPress,
 		maxTopLevelChildren = null,
@@ -188,13 +187,9 @@ const Markdown = React.memo(
 			],
 		);
 
-		// const momoizedParser = useMemo(() => markdownit, [markdownit]);
-		const momoizedSimpleParser = useMemo(
-			() => simplemarkdown,
-			[simplemarkdown],
-		);
+		const momoizedParser = useMemo(() => markdownit, [markdownit]);
 
-		return parser(children, momoizedRenderer.render, momoizedSimpleParser);
+		return parser(children, momoizedRenderer.render, momoizedParser);
 	},
 );
 
