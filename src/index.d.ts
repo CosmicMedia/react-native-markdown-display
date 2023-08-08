@@ -32,7 +32,7 @@ export type RenderTimestampFunction = (
 	children: ReactNode[],
 	parentNodes: ASTNode[],
 	styles: any,
-	onTimestampPress?: (url: string) => boolean,
+	onTimestampPress?: (url: string) => void,
 ) => ReactNode;
 
 export type RenderImageFunction = (
@@ -99,7 +99,7 @@ export interface MarkdownProps {
 	mergeStyle?: boolean;
 	debugPrintTree?: boolean;
 	onLinkPress?: (url: string) => boolean;
-	onTimestampPress?: (url: string) => boolean;
+	onTimestampPress?: (url: string) => void;
 }
 
 type MarkdownStatic = ComponentType<MarkdownProps>;
