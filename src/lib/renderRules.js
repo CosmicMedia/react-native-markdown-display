@@ -303,7 +303,7 @@ const renderRules = {
 	<Text
       key={node.key}
       style={styles.link}
-      onPress={onTimestampPress}>
+      onPress={() => onTimestampPress(node?.children[0]?.content)}>
       {children}
     </Text>
   ),
